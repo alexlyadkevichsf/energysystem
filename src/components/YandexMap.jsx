@@ -1,19 +1,5 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+import { useEffect, useRef } from 'react'
 import './YandexMap.css'
-
-// Фикс иконок маркеров в Vite
-import markerIcon from 'leaflet/dist/images/marker-icon.png'
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
-import markerShadow from 'leaflet/dist/images/marker-shadow.png'
-
-delete L.Icon.Default.prototype._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconUrl: markerIcon,
-  iconRetinaUrl: markerIcon2x,
-  shadowUrl: markerShadow
-})
 
 const cities = [
   { name: 'Минск', coords: [53.90019, 27.56653] },
@@ -25,24 +11,62 @@ const cities = [
 ]
 
 function YandexMap() {
-  return (
-    <MapContainer
-      center={[53.90019, 27.56653]}
-      zoom={8}
-      className="yandex-map"
-      scrollWheelZoom={true}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {cities.map((city) => (
-        <Marker key={city.name} position={city.coords}>
-          <Popup><strong>{city.name}</strong></Popup>
-        </Marker>
-      ))}
-    </MapContainer>
-  )
+  const mapRef = useRef(null)
+  const mapInstance = useRef(null)
+
+  useEffect(() => {
+    // Загружаем Яндекс.Карты API
+    const loadYandexMaps = () => {
+      return new Promise((resolve) => {
+        if (window.ymaps) {
+          resolve(window.ymaps)
+          return
+        }
+
+        const script = document.createElement('script')
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU'
+        script.async = true
+        script.onload = () => {
+          window.ymaps.ready(() => resolve(window.ymaps))
+        }
+        document.head.appendChild(script)
+      })
+    }
+
+    loadYandexMaps().then((ymaps) => {
+      if (mapInstance.current || !mapRef.current) return
+
+      // Создаём карту
+      mapInstance.current = new ymaps.Map(mapRef.current, {
+        center: [53.90019, 27.56653],
+        zoom: 8,
+        controls: ['zoomControl', 'fullscreenControl']
+      })
+
+      // Добавляем метки городов
+      cities.forEach((city) => {
+        const placemark = new ymaps.Placemark(
+          city.coords,
+          {
+            balloonContent: `<strong>${city.name}</strong>`
+          },
+          {
+            preset: 'islands#redDotIcon'
+          }
+        )
+        mapInstance.current.geoObjects.add(placemark)
+      })
+    })
+
+    return () => {
+      if (mapInstance.current) {
+        mapInstance.current.destroy()
+        mapInstance.current = null
+      }
+    }
+  }, [])
+
+  return <div ref={mapRef} className="yandex-map" />
 }
 
 export default YandexMap
