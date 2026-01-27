@@ -1,0 +1,166 @@
+.header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-top-bar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 0;
+}
+
+.header-top-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-top {
+  flex-shrink: 0;
+}
+
+.logo-top h1 {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: white;
+}
+
+.logo-top .tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  margin: 0;
+}
+
+.header-right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-phones {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.phone-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: #FFC107;
+}
+
+.social-icons-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-link-header {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.social-icon-link-header:hover {
+  transform: translateY(-3px) scale(1.1);
+  opacity: 0.8;
+}
+
+.social-icon-header {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
+  display: block;
+}
+
+.social-icon-link-instagram {
+  width: 25px;
+  height: 40px;
+}
+
+.social-icon-instagram {
+  width: 25px;
+  height: 40px;
+}
+
+@media (max-width: 968px) {
+  .header-top-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .header-right-section {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-top h1 {
+    font-size: 1.3rem;
+  }
+  
+  .logo-top .tagline {
+    font-size: 0.75rem;
+  }
+  
+  .header-top-content {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .header-right-section {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .header-phones {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .social-icons-header {
+    gap: 10px;
+  }
+
+  .social-icon-header {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-icon-link-instagram {
+    width: 22px;
+    height: 35px;
+  }
+
+  .social-icon-instagram {
+    width: 22px;
+    height: 35px;
+  }
+}
+

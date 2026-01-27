@@ -1,0 +1,248 @@
+.contacts-page {
+  padding: 30px 0;
+}
+
+.contacts-page h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #FFC107;
+}
+
+.contacts-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-info {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contact-block {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contact-block:last-child {
+  border-bottom: none;
+}
+
+.contact-block h3 {
+  font-size: 1.2rem;
+  color: #FFC107;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-block p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.phone-link,
+.email-link {
+  color: #FFC107;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.phone-link:hover,
+.email-link:hover {
+  color: #FFD54F;
+  text-decoration: underline;
+}
+
+.certificate-section {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-section h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.certificate-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-preview {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px dashed #FFC107;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.pdf-preview:hover {
+  border-color: #FFD54F;
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3c4 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 193, 7, 0.3);
+}
+
+.pdf-preview:hover .pdf-preview-overlay-small {
+  opacity: 0;
+}
+
+.pdf-preview-iframe-container-small {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-preview-iframe-small {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-preview-overlay-small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pdf-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.pdf-preview h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.pdf-preview p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.view-pdf-btn {
+  background: #FFC107;
+  color: #2c3e50;
+  border: none;
+  padding: 10px 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-pdf-btn:hover {
+  background: #FFD54F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.certificate-placeholder {
+  padding: 30px;
+  text-align: center;
+  color: #666;
+}
+
+.certificate-placeholder p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.certificate-note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .certificate-container {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts-page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-block h3 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-block p {
+    font-size: 1rem;
+  }
+}
+
