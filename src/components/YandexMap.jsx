@@ -24,7 +24,7 @@ function YandexMap() {
         }
 
         const script = document.createElement('script')
-        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU'
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=4205ce1b-0fc8-4099-b7f9-6c30fa8ca26b&lang=ru_RU'
         script.async = true
         script.onload = () => {
           window.ymaps.ready(() => resolve(window.ymaps))
