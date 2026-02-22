@@ -235,9 +235,11 @@ function Home({ setActiveTab }) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "EnergySystem",
+    "alternateName": ["Energy System", "Энерджи Систем", "электрик Смолевичи", "электромонтаж Минск"],
     "legalName": "ИП Кулинкович Максим Николаевич",
-    "image": "https://energysystem.by/electro-montaj.jpg",
-    "description": "Профессиональные услуги электрика в Минске и Минской области. Электромонтажные работы, электроотопление, умный дом, отопление и водоснабжение, вентиляция, проектирование инженерных сетей.",
+    "image": ["https://energysystem.by/icontab.jpg", "https://energysystem.by/electro-montaj.jpg"],
+    "description": "Электрик в Смолевичах и Минске. EnergySystem — электромонтажные работы, умный дом, электроотопление в Минской области. Обслуживаем Смолевичи, Жодино, Борисов, Логойск, Червень. Отопление, водоснабжение, вентиляция, проектирование инженерных сетей.",
+    "sameAs": ["https://t.me/EnergySystemMinsk_bot", "https://energysystem.by"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "д. Лужки, ул. Молодежная, 8",
@@ -340,11 +342,11 @@ function Home({ setActiveTab }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <section className="hero-section">
-        <h2>Добро пожаловать!</h2>
+        <h1>Электрик Смолевичи и Минск — электромонтаж, умный дом | EnergySystem</h1>
         <p className="intro-text">
-          EnergySystem предлагает профессиональные 
-          услуги по электромонтажным работам, системам отопления, водоснабжения, вентиляции 
-          и проектированию инженерных сетей.
+          EnergySystem (Энерджи Систем) — профессиональный электрик в Смолевичах, Минске и Минской области. 
+          Электромонтаж, умный дом, электроотопление, отопление и водоснабжение, вентиляция, 
+          проектирование инженерных сетей. Жодино, Борисов, Логойск, Червень.
         </p>
       </section>
 
