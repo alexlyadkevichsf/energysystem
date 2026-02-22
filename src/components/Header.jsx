@@ -13,12 +13,22 @@ function Header({ setActiveTab }) {
         <div className="header-top-container">
           <div className="header-top-content">
             <div className="logo-top">
-              <h1 
+              <div 
+                className="logo-text"
                 onClick={handleLogoClick}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    handleLogoClick()
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label="EnergySystem — перейти на главную"
                 style={{ cursor: 'pointer' }}
               >
                 EnergySystem
-              </h1>
+              </div>
               <p className="tagline">Профессиональные инженерные решения</p>
             </div>
             <div className="header-right-section">

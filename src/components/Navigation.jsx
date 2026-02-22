@@ -45,6 +45,7 @@ function Navigation({ activeTab, setActiveTab }) {
                 <button
                   className={`nav-button ${activeTab === item.id ? 'active' : ''}`}
                   onClick={() => handleNavClick(item.id)}
+                  aria-current={activeTab === item.id ? 'page' : undefined}
                 >
                   {item.label}
                 </button>

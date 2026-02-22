@@ -41,9 +41,10 @@ function App() {
 
   return (
     <div className="app">
+      <a href="#main-content" className="skip-link">Перейти к основному содержимому</a>
       <Header setActiveTab={setActiveTab} />
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="main-content">
+      <main id="main-content" className="main-content" role="main" tabIndex={-1}>
         {renderContent()}
       </main>
       <Footer />

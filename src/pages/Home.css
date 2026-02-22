@@ -28,6 +28,7 @@
   background: rgba(44, 62, 80, 0.7);
 }
 
+.hero-section h1,
 .hero-section h2 {
   font-size: 3rem;
   color: white;
@@ -457,12 +458,37 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section h1,
   .hero-section h2 {
     font-size: 1.8rem;
   }
   
   .intro-text {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 50px 16px;
+    min-height: 320px;
+  }
+  
+  .hero-section h1,
+  .hero-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .intro-text {
+    font-size: 0.95rem;
+  }
+  
+  .services-preview {
+    padding: 30px 16px;
+  }
+  
+  .service-content-full {
+    padding: 20px;
   }
   
   .services-grid {

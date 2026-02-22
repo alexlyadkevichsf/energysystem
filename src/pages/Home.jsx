@@ -341,8 +341,8 @@ function Home({ setActiveTab }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <section className="hero-section">
-        <h2>Добро пожаловать!</h2>
+      <section className="hero-section" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Добро пожаловать!</h1>
         <p className="intro-text">
           EnergySystem предлагает профессиональные 
           услуги по электромонтажным работам, системам отопления, водоснабжения, вентиляции 
