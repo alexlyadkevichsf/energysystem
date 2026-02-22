@@ -36,7 +36,7 @@ function Header({ setActiveTab }) {
                   <img src="/instagram.png" alt="Instagram" className="social-icon-header social-icon-instagram" />
                 </a>
                 <a 
-                  href="https://t.me/+375445818994" 
+                  href="https://t.me/EnergySystemMinsk_bot" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-icon-link-header"
