@@ -362,6 +362,8 @@ function Home({ setActiveTab }) {
                 src="/electro-montaj.jpg" 
                 alt="Электромонтажные работы в Минске, Смолевичах, Жодино, Борисове - профессиональный электрик" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="service-content-full">
@@ -395,6 +397,8 @@ function Home({ setActiveTab }) {
                 src="/electro-otoplene.jpg" 
                 alt="Электроотопление в Минске и Минской области - установка систем отопления" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -405,6 +409,8 @@ function Home({ setActiveTab }) {
                 src="/smart-home-for-begin.jpg" 
                 alt="Умный дом в Минске - автоматизация и интеллектуальное управление" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="service-content-full">
@@ -440,6 +446,8 @@ function Home({ setActiveTab }) {
                 src="/otopleniye-montaj.jpg" 
                 alt="Отопление и водоснабжение в Минске - монтаж систем отопления и водоснабжения" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -450,6 +458,8 @@ function Home({ setActiveTab }) {
                 src="/ventilyaciya.jpg" 
                 alt="Вентиляция в Минске - монтаж систем вентиляции и кондиционирования" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="service-content-full">
@@ -486,6 +496,8 @@ function Home({ setActiveTab }) {
                 src="/crop-architect-opening-blueprint_23-2147710985.avif" 
                 alt="Проектирование инженерных сетей в Минске - разработка проектной документации" 
                 className="service-image-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -519,11 +531,15 @@ function Home({ setActiveTab }) {
               src="/Certificate 1.png" 
               alt="Сертификат страница 1" 
               className="certificate-page-image"
+              loading="lazy"
+              decoding="async"
             />
             <img 
               src="/Certificate 2.png" 
               alt="Сертификат страница 2" 
               className="certificate-page-image"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

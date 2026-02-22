@@ -56,6 +56,8 @@ function Contacts() {
                 src="/svidetelstro-new.png" 
                 alt="Свидетельство о государственной регистрации" 
                 className="certificate-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="certificate-note">
