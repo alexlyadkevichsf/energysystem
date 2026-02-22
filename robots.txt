@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Sitemaps
 Sitemap: https://energysystem.by/sitemap.xml
 
 # Disallow admin and private areas (if any)
