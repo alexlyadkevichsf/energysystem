@@ -41,8 +41,23 @@
 
 .header-right-section {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.header-phones-and-social {
+  display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.header-promo {
+  font-size: 0.8rem;
+  color: #FFC107;
+  margin: 0;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .header-phones {
@@ -110,9 +125,12 @@
 
   .header-right-section {
     width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .header-promo {
+    white-space: normal;
+    font-size: 0.75rem;
   }
 }
 
@@ -132,8 +150,13 @@
   }
 
   .header-right-section {
-    flex-direction: column;
     width: 100%;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-phones-and-social {
+    flex-wrap: wrap;
     gap: 12px;
   }
   
