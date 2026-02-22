@@ -1,32 +1,33 @@
 import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import './Navigation.css'
 
-function Navigation({ activeTab, setActiveTab }) {
+function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+
+  const closeMenu = () => setIsMenuOpen(false)
 
   const navItems = [
-    { id: 'home', label: 'Главная' },
-    { id: 'electromontage', label: 'Электромонтаж' },
-    { id: 'electroheating', label: 'Электроотопление' },
-    { id: 'smarthome', label: 'Умный дом' },
-    { id: 'heating-water', label: 'Отопление' },
-    { id: 'ventilation', label: 'Вентиляция' },
-    { id: 'design', label: 'Проектирование' },
-    { id: 'contacts', label: 'Контакты' }
+    { path: '/', label: 'Главная' },
+    { path: '/electromontage', label: 'Электромонтаж' },
+    { path: '/electroheating', label: 'Электроотопление' },
+    { path: '/smarthome', label: 'Умный дом' },
+    { path: '/heating-water', label: 'Отопление' },
+    { path: '/ventilation', label: 'Вентиляция' },
+    { path: '/design', label: 'Проектирование' },
+    { path: '/reviews', label: 'Отзывы' },
+    { path: '/contacts', label: 'Контакты' }
   ]
-
-  const handleNavClick = (itemId) => {
-    setActiveTab(itemId)
-    setIsMenuOpen(false)
-  }
 
   return (
     <>
       {isMenuOpen && (
         <div 
           className="nav-overlay"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
       )}
       <nav className="navigation">
         <div className="nav-container">
@@ -34,6 +35,7 @@ function Navigation({ activeTab, setActiveTab }) {
             className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Открыть меню"
+            aria-expanded={isMenuOpen}
           >
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
@@ -41,14 +43,15 @@ function Navigation({ activeTab, setActiveTab }) {
           </button>
           <ul className={`nav-list ${isMenuOpen ? 'nav-list-open' : ''}`}>
             {navItems.map(item => (
-              <li key={item.id} className="nav-item">
-                <button
-                  className={`nav-button ${activeTab === item.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(item.id)}
-                  aria-current={activeTab === item.id ? 'page' : undefined}
+              <li key={item.path} className="nav-item">
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => `nav-button ${isActive ? 'active' : ''}`}
+                  onClick={closeMenu}
+                  aria-current={location.pathname === item.path ? 'page' : undefined}
                 >
                   {item.label}
-                </button>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -59,4 +62,3 @@ function Navigation({ activeTab, setActiveTab }) {
 }
 
 export default Navigation
-

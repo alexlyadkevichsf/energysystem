@@ -76,6 +76,7 @@
 }
 
 .nav-button {
+  display: block;
   white-space: nowrap;
   width: 100%;
   min-height: 44px;
@@ -89,6 +90,9 @@
   font-weight: 500;
   transition: all 0.3s ease;
   text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 .nav-button:hover {

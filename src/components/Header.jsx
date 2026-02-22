@@ -1,34 +1,20 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
 
-function Header({ setActiveTab }) {
-  const handleLogoClick = () => {
-    if (setActiveTab) {
-      setActiveTab('home')
-    }
-  }
-
+function Header() {
   return (
     <header className="header">
       <div className="header-top-bar">
         <div className="header-top-container">
           <div className="header-top-content">
             <div className="logo-top">
-              <div 
+              <Link 
+                to="/"
                 className="logo-text"
-                onClick={handleLogoClick}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    handleLogoClick()
-                  }
-                }}
-                role="button"
-                tabIndex={0}
                 aria-label="EnergySystem — перейти на главную"
-                style={{ cursor: 'pointer' }}
               >
                 EnergySystem
-              </div>
+              </Link>
               <p className="tagline">Профессиональные инженерные решения</p>
             </div>
             <div className="header-right-section">
@@ -76,4 +62,3 @@ function Header({ setActiveTab }) {
 }
 
 export default Header
-

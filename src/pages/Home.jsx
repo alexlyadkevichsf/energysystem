@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import YandexMap from '../components/YandexMap'
 
-function Home({ setActiveTab }) {
+function Home() {
   const [reviewsToShow, setReviewsToShow] = useState(3)
 
   const mockReviews = [
@@ -225,12 +226,6 @@ function Home({ setActiveTab }) {
     setReviewsToShow(prev => Math.min(prev + 2, mockReviews.length))
   }
 
-  const handleServiceClick = (serviceId) => {
-    if (setActiveTab) {
-      setActiveTab(serviceId)
-    }
-  }
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -356,7 +351,7 @@ function Home({ setActiveTab }) {
           Оставьте заявку и получите бесплатную консультацию по своим работам
         </p>
         <div className="services-list-fullwidth">
-          <div className="service-card-full service-card-left" onClick={() => handleServiceClick('electromontage')}>
+          <Link to="/electromontage" className="service-card-full service-card-left service-card-link">
             <div className="service-image-wrapper-full">
               <img 
                 src="/electro-montaj.jpg" 
@@ -377,9 +372,9 @@ function Home({ setActiveTab }) {
                 Гарантия на выполненные работы при соблюдении правил эксплуатации.
               </p>
             </div>
-          </div>
+          </Link>
 
-          <div className="service-card-full service-card-right" onClick={() => handleServiceClick('electroheating')}>
+          <Link to="/electroheating" className="service-card-full service-card-right service-card-link">
             <div className="service-content-full">
               <h3>Электроотопление</h3>
               <p>
@@ -401,9 +396,9 @@ function Home({ setActiveTab }) {
                 decoding="async"
               />
             </div>
-          </div>
+          </Link>
 
-          <div className="service-card-full service-card-left" onClick={() => handleServiceClick('smarthome')}>
+          <Link to="/smarthome" className="service-card-full service-card-left service-card-link">
             <div className="service-image-wrapper-full">
               <img 
                 src="/smart-home-for-begin.jpg" 
@@ -425,9 +420,9 @@ function Home({ setActiveTab }) {
                 установки и расширения функционала. Обеспечиваем полную техническую поддержку и обслуживание.
               </p>
             </div>
-          </div>
+          </Link>
 
-          <div className="service-card-full service-card-right" onClick={() => handleServiceClick('heating-water')}>
+          <Link to="/heating-water" className="service-card-full service-card-right service-card-link">
             <div className="service-content-full">
               <h3>Отопление и водоснабжение</h3>
               <p>
@@ -450,9 +445,9 @@ function Home({ setActiveTab }) {
                 decoding="async"
               />
             </div>
-          </div>
+          </Link>
 
-          <div className="service-card-full service-card-left" onClick={() => handleServiceClick('ventilation')}>
+          <Link to="/ventilation" className="service-card-full service-card-left service-card-link">
             <div className="service-image-wrapper-full">
               <img 
                 src="/ventilyaciya.jpg" 
@@ -475,9 +470,9 @@ function Home({ setActiveTab }) {
                 техническое обслуживание и чистку систем.
               </p>
             </div>
-          </div>
+          </Link>
 
-          <div className="service-card-full service-card-right" onClick={() => handleServiceClick('design')}>
+          <Link to="/design" className="service-card-full service-card-right service-card-link">
             <div className="service-content-full">
               <h3>Проектирование инженерных сетей</h3>
               <p>
@@ -500,7 +495,7 @@ function Home({ setActiveTab }) {
                 decoding="async"
               />
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -575,13 +570,17 @@ function Home({ setActiveTab }) {
             </div>
           ))}
         </div>
-        {hasMoreReviews && (
-          <div className="reviews-show-more-container">
+        <div className="reviews-show-more-container">
+          {hasMoreReviews ? (
             <button className="show-more-reviews-btn" onClick={handleShowMore}>
               Показать еще отзывы
             </button>
-          </div>
-        )}
+          ) : (
+            <Link to="/reviews" className="view-all-reviews-btn">
+              Все отзывы
+            </Link>
+          )}
+        </div>
       </section>
 
     </div>

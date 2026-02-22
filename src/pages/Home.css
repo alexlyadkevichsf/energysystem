@@ -96,6 +96,11 @@
   min-height: 300px;
 }
 
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .service-card-full:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -448,6 +453,11 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.view-all-reviews-btn {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .show-more-reviews-btn:hover,

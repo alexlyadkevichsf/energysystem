@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
@@ -14,38 +14,23 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home')
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return <Home setActiveTab={setActiveTab} />
-      case 'electromontage':
-        return <Electromontage />
-      case 'electroheating':
-        return <ElectroHeating />
-      case 'smarthome':
-        return <SmartHome />
-      case 'heating-water':
-        return <HeatingWaterSupply />
-      case 'ventilation':
-        return <Ventilation />
-      case 'design':
-        return <EngineeringDesign />
-      case 'contacts':
-        return <Contacts />
-      default:
-        return <Home />
-    }
-  }
-
   return (
     <div className="app">
       <a href="#main-content" className="skip-link">Перейти к основному содержимому</a>
-      <Header setActiveTab={setActiveTab} />
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Header />
+      <Navigation />
       <main id="main-content" className="main-content" role="main" tabIndex={-1}>
-        {renderContent()}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/electromontage" element={<Electromontage />} />
+          <Route path="/electroheating" element={<ElectroHeating />} />
+          <Route path="/smarthome" element={<SmartHome />} />
+          <Route path="/heating-water" element={<HeatingWaterSupply />} />
+          <Route path="/ventilation" element={<Ventilation />} />
+          <Route path="/design" element={<EngineeringDesign />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/reviews" element={<Reviews />} />
+        </Routes>
       </main>
       <Footer />
     </div>
@@ -53,4 +38,3 @@ function App() {
 }
 
 export default App
-

@@ -30,6 +30,12 @@
   margin-bottom: 3px;
   font-weight: 600;
   color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logo-top .logo-text:hover {
+  color: white;
 }
 
 .logo-top .tagline {
