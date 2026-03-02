@@ -43,7 +43,7 @@ function Header() {
                       <img src="/telegram.png" alt="Telegram" className="social-icon-header" />
                     </a>
                     <a 
-                      href="viber://add?number=375445818994" 
+                      href="viber://chat?number=+375445818994" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="social-icon-link-header"
