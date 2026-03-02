@@ -25,7 +25,7 @@ function Header() {
                   </div>
                   <div className="social-icons-header">
                     <a 
-                      href="https://www.instagram.com/_electro_alex" 
+                      href="https://www.instagram.com/____energysystem_" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="social-icon-link-header social-icon-link-instagram"
@@ -43,7 +43,9 @@ function Header() {
                       <img src="/telegram.png" alt="Telegram" className="social-icon-header" />
                     </a>
                     <a 
-                      href="viber://chat?number=375445818994" 
+                      href="viber://add?number=375445818994" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="social-icon-link-header"
                       aria-label="Viber"
                     >
